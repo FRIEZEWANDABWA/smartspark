@@ -61,6 +61,20 @@ export default function Contact() {
   }
 
   const nextStep = () => {
+    // Validate required fields for each step
+    if (currentStep === 1) {
+      if (!formData.fullName || !formData.email) {
+        alert('Please fill in all required fields (Name and Email)')
+        return
+      }
+    }
+    if (currentStep === 2) {
+      if (!formData.serviceType || !formData.projectDescription) {
+        alert('Please fill in all required fields (Service Type and Project Description)')
+        return
+      }
+    }
+    
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1)
     }
