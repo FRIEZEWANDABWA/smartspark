@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { addToSheet } from '../../lib/googleSheets'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log('API called:', req.method, req.body)
-  
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' })
   }
@@ -10,13 +9,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { name, email, message } = req.body
     
-    // Just return success for now
-    console.log('Form data received:', { name, email, message })
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: 'All fields are required' })
+    }
     
-    res.status(200).json({ 
-      message: 'Form received successfully!',
-      data: { name, email, message }
+    const result = await addToSheet({
+      name,
+      email,
+      message,
+      type: 'Quick Contact',
+      timestamp: new Date().toISOString()
     })
+    
+    if (result.success) {
+      res.status(200).json({ message: 'Form submitted successfully!' })
+    } else {
+      throw new Error('Failed to save to Google Sheets')
+    }
   } catch (error) {
     console.error('Error:', error)
     res.status(500).json({ message: 'Server error', error: (error as Error).message })
