@@ -204,22 +204,26 @@ export default function Home() {
     {
       icon: Monitor,
       title: 'Web & App Design',
-      description: 'Professional website and mobile app design solutions for your business.'
+      description: 'Professional website and mobile app design solutions for your business.',
+      link: '/services#technical-services'
     },
     {
       icon: Brain,
       title: 'AI Automation',
-      description: 'Cutting-edge AI solutions and automation to streamline your processes.'
+      description: 'Cutting-edge AI solutions and automation to streamline your processes.',
+      link: '/services#technical-services'
     },
     {
       icon: Database,
       title: 'Data Services',
-      description: 'Data entry, analysis, and management services for your business needs.'
+      description: 'Data entry, analysis, and management services for your business needs.',
+      link: '/services#technical-services'
     },
     {
       icon: Video,
       title: 'Graphic Design & Video Editing',
-      description: 'Creative design and professional video editing for your brand.'
+      description: 'Creative design and professional video editing for your brand.',
+      link: '/services#creative-services'
     }
   ]
 
@@ -422,7 +426,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Link href="/services" key={service.title}>
+              <Link href={service.link} key={service.title}>
                 <div className="bg-primary-600 dark:bg-primary-600 light:bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 cursor-pointer">
                   <service.icon className="text-accent-500 mb-4" size={40} />
                   <h3 className="text-lg font-bold mb-3 text-white dark:text-white light:text-text-light">{service.title}</h3>

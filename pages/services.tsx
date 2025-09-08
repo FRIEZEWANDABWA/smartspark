@@ -133,7 +133,7 @@ export default function Services() {
       </section>
 
       {/* Creative Services */}
-      <section className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
+      <section id="creative-services" className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/5.webp)' }}></div>
         </div>
@@ -191,7 +191,7 @@ export default function Services() {
       </section>
 
       {/* Technical Services */}
-      <section className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
+      <section id="technical-services" className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/6.webp)' }}></div>
         </div>
@@ -249,7 +249,7 @@ export default function Services() {
       </section>
 
       {/* Business Support */}
-      <section className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
+      <section id="business-support" className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/7.webp)' }}></div>
         </div>
