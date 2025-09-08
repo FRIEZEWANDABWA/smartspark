@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error('Quote API error:', error)
     res.status(500).json({ 
       message: 'Failed to submit quote request',
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+      error: process.env.NODE_ENV === 'development' ? (error as Error).message : 'Internal server error'
     })
   }
 }
