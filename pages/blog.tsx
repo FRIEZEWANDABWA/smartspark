@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react'
 import Link from 'next/link'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Blog() {
   const blogPosts = [
@@ -326,6 +327,8 @@ export default function Blog() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }

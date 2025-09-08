@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play, Eye, Filter, Search } from 'lucide-react'
 import { useState, useMemo } from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -336,6 +337,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }
