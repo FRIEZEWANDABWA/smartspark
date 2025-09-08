@@ -334,8 +334,8 @@ export default function ServiceDetail() {
                 </div>
                 <div className="text-center p-4 bg-gray-50 dark:bg-primary-800 rounded-lg">
                   <Award className="mx-auto h-8 w-8 text-primary-600 mb-2" />
-                  <div className="font-semibold text-gray-900 dark:text-white">Starting Price</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">{currentService.pricing}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white">Custom Quote</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Let's shape a package that's built around you</div>
                 </div>
               </div>
             </motion.div>
