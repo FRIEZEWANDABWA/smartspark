@@ -206,25 +206,25 @@ export default function Home() {
       icon: Monitor,
       title: 'Web & App Design',
       description: 'Professional website and mobile app design solutions for your business.',
-      link: '/services#technical-services'
+      link: '/services/web-development-and-design'
     },
     {
       icon: Brain,
       title: 'AI Automation',
       description: 'Cutting-edge AI solutions and automation to streamline your processes.',
-      link: '/services#technical-services'
+      link: '/services/ai-and-automation-solutions'
     },
     {
       icon: Database,
       title: 'Data Services',
       description: 'Data entry, analysis, and management services for your business needs.',
-      link: '/services#technical-services'
+      link: '/services/data-services'
     },
     {
       icon: Video,
       title: 'Graphic Design & Video Editing',
       description: 'Creative design and professional video editing for your brand.',
-      link: '/services#creative-services'
+      link: '/services/video-production-and-editing'
     }
   ]
 
