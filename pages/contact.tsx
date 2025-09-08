@@ -97,8 +97,8 @@ export default function Contact() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name: formData.fullName || 'Quote Request',
-          email: formData.email || 'no-email@provided.com',
+          name: formData.fullName,
+          email: formData.email,
           message: `Service: ${formData.serviceType || 'General Inquiry'}\nBudget: ${formData.budgetRange || 'Not specified'}\n\n${detailedMessage}`
         })
       })
