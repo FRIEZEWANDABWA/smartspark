@@ -309,7 +309,7 @@ export default function Contact() {
       {/* Contact Form */}
       <section className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 dark:opacity-30">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/10.jpg)' }}></div>
+          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/10.jpg)' }}></div>
         </div>
         <div className="absolute inset-0 bg-gray-50/75 dark:bg-primary-800/80"></div>
         

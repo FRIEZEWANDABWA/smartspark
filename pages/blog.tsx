@@ -100,10 +100,7 @@ export default function Blog() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/images/backgrounds/pexels-hillaryfox-1595385.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed'
+              backgroundImage: 'url(/images/backgrounds/pexels-hillaryfox-1595385.jpg)'
             }}
           ></div>
         </div>
@@ -220,10 +217,7 @@ export default function Blog() {
                   <div 
                     className="w-full h-full bg-cover bg-center bg-no-repeat" 
                     style={{ 
-                      backgroundImage: `url(/images/backgrounds/${backgroundImages[groupIndex % backgroundImages.length]})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundAttachment: 'fixed'
+                      backgroundImage: `url(/images/backgrounds/${backgroundImages[groupIndex % backgroundImages.length]})`
                     }}
                   ></div>
                 </div>

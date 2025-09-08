@@ -124,10 +124,7 @@ export default function Portfolio() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/images/backgrounds/connection-technology-4878379_1920.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed'
+              backgroundImage: 'url(/images/backgrounds/connection-technology-4878379_1920.png)'
             }}
           ></div>
         </div>
@@ -160,10 +157,7 @@ export default function Portfolio() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/images/backgrounds/pexels-pixabay-4158.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed'
+              backgroundImage: 'url(/images/backgrounds/pexels-pixabay-4158.jpg)'
             }}
           ></div>
         </div>
@@ -208,10 +202,7 @@ export default function Portfolio() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/images/backgrounds/pexels-olly-845451.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed'
+              backgroundImage: 'url(/images/backgrounds/pexels-olly-845451.jpg)'
             }}
           ></div>
         </div>
@@ -307,10 +298,7 @@ export default function Portfolio() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat" 
             style={{ 
-              backgroundImage: 'url(/images/backgrounds/violet-8474790_1920.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed'
+              backgroundImage: 'url(/images/backgrounds/violet-8474790_1920.jpg)'
             }}
           ></div>
         </div>

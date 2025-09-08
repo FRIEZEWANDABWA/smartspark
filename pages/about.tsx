@@ -139,7 +139,7 @@ export default function About() {
       {/* Our Story */}
       <section className="py-20 relative overflow-hidden bg-white dark:bg-primary-900 transition-colors duration-300">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/1.webp)' }}></div>
+          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/1.webp)' }}></div>
         </div>
         <div className="absolute inset-0 bg-white/70 dark:bg-primary-900/75"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -199,7 +199,7 @@ export default function About() {
       {/* Our Values */}
       <section className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 opacity-40 dark:opacity-30">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/2.webp)' }}></div>
+          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/2.webp)' }}></div>
         </div>
         <div className="absolute inset-0 bg-gray-50/75 dark:bg-primary-800/80"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -234,7 +234,7 @@ export default function About() {
       {/* Our Journey */}
       <section className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed sm:bg-scroll" style={{ backgroundImage: 'url(/images/backgrounds/3.webp)' }}></div>
+          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/3.webp)' }}></div>
         </div>
         <div className="absolute inset-0 bg-white/70 dark:bg-primary-900/75"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
