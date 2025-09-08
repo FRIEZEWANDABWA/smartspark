@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Users, Pen, Monitor, Video, Brain, Database, Globe, Clock, Shield, Award, ArrowRight, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -180,9 +181,9 @@ export default function Services() {
                   </div>
                   
                   <div className="border-t pt-4">
-                    <a href="/contact" className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
-                      Get Quote
-                    </a>
+                    <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
+                      Learn More
+                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -238,9 +239,9 @@ export default function Services() {
                   </div>
                   
                   <div className="border-t pt-4">
-                    <a href="/contact" className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
-                      Get Quote
-                    </a>
+                    <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
+                      Learn More
+                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -296,9 +297,9 @@ export default function Services() {
                   </div>
                   
                   <div className="border-t pt-4">
-                    <a href="/contact" className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
-                      Get Quote
-                    </a>
+                    <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
+                      Learn More
+                    </Link>
                   </div>
                 </motion.div>
               ))}
