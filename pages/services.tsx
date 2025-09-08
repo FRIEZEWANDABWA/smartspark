@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Users, Pen, Monitor, Video, Brain, Database, Globe, Clock, Shield, Award, ArrowRight, CheckCircle } from 'lucide-react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Services() {
   const serviceCategories = [
@@ -397,6 +398,8 @@ export default function Services() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }

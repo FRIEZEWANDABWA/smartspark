@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Calendar, Globe, Upload, CheckCircle, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Contact() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -710,6 +711,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Users, Globe, Award, Target, Heart, Zap, TrendingUp, Shield } from 'lucide-react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function About() {
   const stats = [
@@ -268,6 +269,8 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   )
 }
