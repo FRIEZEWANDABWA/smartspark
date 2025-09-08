@@ -264,7 +264,7 @@ export default function ServiceDetail() {
     }
   }
 
-  const currentService = serviceData[service as string]
+  const currentService = serviceData[service as keyof typeof serviceData]
 
   if (!currentService) {
     return (
