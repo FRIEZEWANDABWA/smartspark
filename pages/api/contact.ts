@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { addToSheet } from '../../lib/googleSheets'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -13,21 +12,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ message: 'Name, email, and message are required' })
     }
 
-    // Add to Google Sheets
-    const result = await addToSheet({
+    // Log the contact info (you can see this in Netlify function logs)
+    console.log('Contact Form Submission:', {
+      timestamp: new Date().toISOString(),
       name,
       email,
       message,
-      type: 'Contact Form',
-      timestamp: new Date().toISOString()
+      type: 'Contact Form'
     })
     
-    if (result.success) {
-      console.log('Contact saved to Google Sheets')
-      res.status(200).json({ message: 'Contact form submitted successfully' })
-    } else {
-      throw new Error('Failed to save to Google Sheets')
-    }
+    res.status(200).json({ message: 'Contact form submitted successfully' })
   } catch (error) {
     console.error('Contact API error:', error)
     res.status(500).json({ message: 'Failed to submit contact form' })
