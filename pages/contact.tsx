@@ -125,30 +125,18 @@ export default function Contact() {
         `Timestamp: ${new Date().toISOString()}`
       ].filter(line => !line.endsWith(': ') && !line.endsWith(': None')).join('\n')
 
-      // Submit to multiple endpoints for reliability
-      const submissionData = {
-        name: formData.fullName,
-        email: formData.email,
-        message: `Service: ${formData.serviceType || 'General Inquiry'}\nBudget: ${formData.budgetRange || 'Not specified'}\n\n${detailedMessage}`
-      }
-
-      // Try Netlify Forms first (most reliable)
-      let response
-      try {
-        response = await fetch('/api/netlify-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(submissionData)
+      // Submit using simple fetch to contact API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          message: `Service: ${formData.serviceType || 'General Inquiry'}\nBudget: ${formData.budgetRange || 'Not specified'}\n\n${detailedMessage}`
         })
-      } catch (netlifyError) {
-        console.log('Netlify form failed, trying email API')
-        // Fallback to email API
-        response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(submissionData)
-        })
-      }
+      })
 
       if (response.ok) {
         const result = await response.json()
@@ -293,7 +281,7 @@ export default function Contact() {
       <Header />
       
       {/* Hidden Netlify Form */}
-      <form name="contact" netlify hidden>
+      <form name="contact" data-netlify="true" style={{ display: 'none' }}>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <textarea name="message"></textarea>
