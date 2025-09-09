@@ -107,8 +107,7 @@ export default function Contact() {
     }
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async () => {
     setIsSubmitting(true)
 
     try {
@@ -341,7 +340,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-white dark:bg-primary-700 p-8 rounded-xl shadow-lg"
           >
-            <form onSubmit={currentStep === 3 ? handleSubmit : (e) => e.preventDefault()} className="space-y-8">
+            <div className="space-y-8">
               {/* Step 1: Contact Information */}
               {currentStep === 1 && (
                 <motion.div
@@ -652,7 +651,8 @@ export default function Contact() {
                     </button>
                   ) : (
                     <button
-                      type="submit"
+                      type="button"
+                      onClick={handleSubmit}
                       disabled={isSubmitting}
                       className="px-8 py-3 bg-accent-500 text-white rounded-lg hover:bg-accent-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
                     >
@@ -671,7 +671,7 @@ export default function Contact() {
                   )}
                 </div>
               </div>
-            </form>
+            </div>
           </motion.div>
         </div>
       </section>

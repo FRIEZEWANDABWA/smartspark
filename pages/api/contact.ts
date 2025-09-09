@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
-        to: 'info@smartspark.com',
+        to: 'keyasamuel2@gmail.com',
         subject: `New Quote Request from ${name}`,
         html: `
           <h2>New Quote Request</h2>
