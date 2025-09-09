@@ -137,16 +137,8 @@ export default function Portfolio() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Portfolio</h1>
             <p className="text-xl md:text-2xl opacity-90 mb-8">
-              Showcasing successful projects that drive real business results
+              Our portfolio highlights the creative solutions we've delivered across diverse industries. Each project is a story of innovation, impact, and measurable business growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Start Your Project
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors">
-                View More Work
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
