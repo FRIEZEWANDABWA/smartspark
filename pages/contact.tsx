@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Calendar, Globe, Upload, CheckCircle, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function Contact() {
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -32,13 +34,32 @@ export default function Contact() {
 
   const [showAdvancedFields, setShowAdvancedFields] = useState(false)
 
-  // Auto-save form data to localStorage
+  // Auto-save form data to localStorage and set service from URL
   useEffect(() => {
     const savedData = localStorage.getItem('contactFormData')
     if (savedData) {
       setFormData(JSON.parse(savedData))
     }
-  }, [])
+    
+    // Set service type from URL parameter
+    if (router.query.service) {
+      const serviceMap = {
+        'web-development-and-design': 'Web Development & Design',
+        'ai-and-automation-solutions': 'AI & Automation Solutions',
+        'data-services': 'Data Services',
+        'content-writing-and-copywriting': 'Content Writing & Copywriting',
+        'graphic-design-and-branding': 'Graphic Design & Branding',
+        'video-production-and-editing': 'Video Production & Editing',
+        'virtual-assistance': 'Virtual Assistance',
+        'digital-marketing': 'Digital Marketing',
+        'project-management': 'Project Management'
+      }
+      const serviceName = serviceMap[router.query.service as string]
+      if (serviceName) {
+        setFormData(prev => ({ ...prev, serviceType: serviceName }))
+      }
+    }
+  }, [router.query.service])
 
   useEffect(() => {
     localStorage.setItem('contactFormData', JSON.stringify(formData))
@@ -320,7 +341,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-white dark:bg-primary-700 p-8 rounded-xl shadow-lg"
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={currentStep === 3 ? handleSubmit : (e) => e.preventDefault()} className="space-y-8">
               {/* Step 1: Contact Information */}
               {currentStep === 1 && (
                 <motion.div
