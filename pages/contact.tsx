@@ -280,13 +280,6 @@ export default function Contact() {
     <div className="min-h-screen bg-white dark:bg-primary-900 transition-colors duration-300">
       <Header />
       
-      {/* Hidden Netlify Form */}
-      <form name="contact" data-netlify="true" style={{ display: 'none' }}>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </form>
-      
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary-600 via-secondary-500 to-accent-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
