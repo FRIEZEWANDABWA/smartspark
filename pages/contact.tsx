@@ -43,7 +43,7 @@ export default function Contact() {
     
     // Set service type from URL parameter
     if (router.query.service) {
-      const serviceMap = {
+      const serviceMap: Record<string, string> = {
         'web-development-and-design': 'Web Development & Design',
         'ai-and-automation-solutions': 'AI & Automation Solutions',
         'data-services': 'Data Services',
