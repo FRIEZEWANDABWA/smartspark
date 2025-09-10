@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Play, Eye, Filter, Search } from 'lucide-react'
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -307,12 +308,12 @@ export default function Portfolio() {
               Let's create something amazing together. Join our portfolio of successful projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Start Your Project
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors">
-                View More Work
-              </button>
+              <Link href="/contact" className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block text-center">
+                Get a Quote
+              </Link>
+              <Link href="/services" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors inline-block text-center">
+                Services
+              </Link>
             </div>
           </motion.div>
         </div>
