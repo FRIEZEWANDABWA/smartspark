@@ -7,32 +7,7 @@ import Footer from '../components/Footer'
 export default function Services() {
   const serviceCategories = [
     {
-      title: "Creative Services",
-      icon: Pen,
-      color: "from-purple-500 to-pink-500",
-      services: [
-        {
-          name: "Content Writing & Copywriting",
-          description: "Engaging blog posts, articles, web copy, and marketing materials",
-          features: ["SEO-optimized content", "Brand voice development", "Technical writing", "Social media copy"],
-
-        },
-        {
-          name: "Graphic Design & Branding",
-          description: "Logo design, brand identity, marketing materials, and visual content",
-          features: ["Logo & brand identity", "Marketing materials", "Social media graphics", "Print design"],
-
-        },
-        {
-          name: "Video Production & Editing",
-          description: "Professional video editing, motion graphics, and content creation",
-          features: ["Video editing", "Motion graphics", "Color grading", "Audio enhancement"],
-
-        }
-      ]
-    },
-    {
-      title: "Technical Services",
+      title: "Our Core Services",
       icon: Monitor,
       color: "from-blue-500 to-cyan-500",
       services: [
@@ -40,44 +15,21 @@ export default function Services() {
           name: "Web Development & Design",
           description: "Custom websites, e-commerce platforms, and web applications",
           features: ["Responsive design", "E-commerce integration", "CMS development", "Performance optimization"],
-
         },
         {
           name: "AI & Automation Solutions",
           description: "ChatGPT integration, workflow automation, and AI-powered tools",
           features: ["ChatGPT integration", "Process automation", "Data analysis", "Custom AI solutions"],
-
         },
         {
-          name: "Data Services",
-          description: "Data entry, research, analysis, and database management",
-          features: ["Data entry & processing", "Market research", "Database management", "Analytics reporting"],
-
-        }
-      ]
-    },
-    {
-      title: "Business Support",
-      icon: Users,
-      color: "from-green-500 to-teal-500",
-      services: [
-        {
-          name: "Virtual Assistance",
-          description: "Administrative support, email management, and business operations",
-          features: ["Email management", "Calendar scheduling", "Customer support", "Administrative tasks"],
-
+          name: "Graphic Design & Branding",
+          description: "Logo design, brand identity, marketing materials, and visual content",
+          features: ["Logo & brand identity", "Marketing materials", "Social media graphics", "Print design"],
         },
         {
           name: "Digital Marketing",
           description: "Social media management, SEO, and online marketing campaigns",
           features: ["Social media management", "SEO optimization", "Content marketing", "Ad campaign management"],
-
-        },
-        {
-          name: "Project Management",
-          description: "End-to-end project coordination and team management",
-          features: ["Project planning", "Team coordination", "Progress tracking", "Quality assurance"],
-
         }
       ]
     }
@@ -134,8 +86,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Creative Services */}
-      <section id="creative-services" className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
+      {/* Core Services */}
+      <section id="core-services" className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-45 dark:opacity-35">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/5.webp)' }}></div>
         </div>
@@ -149,130 +101,14 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                <Pen className="text-white" size={40} />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Creative Services</h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {serviceCategories[0].services.map((service, serviceIndex) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-primary-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-primary-600"
-                >
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{service.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">What's Included:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                          <CheckCircle className="text-green-500 mr-2" size={16} />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="border-t pt-4">
-                    <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
-                      Learn More
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Services */}
-      <section id="technical-services" className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-45 dark:opacity-35">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/6.webp)' }}></div>
-        </div>
-        <div className="absolute inset-0 bg-gray-50/75 dark:bg-primary-800/80"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
                 <Monitor className="text-white" size={40} />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Services</h2>
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Core Services</h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {serviceCategories[1].services.map((service, serviceIndex) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-primary-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-primary-600"
-                >
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{service.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">What's Included:</h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                          <CheckCircle className="text-green-500 mr-2" size={16} />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="border-t pt-4">
-                    <Link href={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors block text-center">
-                      Learn More
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Support */}
-      <section id="business-support" className="py-20 bg-white dark:bg-primary-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-45 dark:opacity-35">
-          <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/7.webp)' }}></div>
-        </div>
-        <div className="absolute inset-0 bg-white/70 dark:bg-primary-900/75"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
-                <Users className="text-white" size={40} />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Business Support</h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {serviceCategories[2].services.map((service, serviceIndex) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {serviceCategories[0].services.map((service, serviceIndex) => (
                 <motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 20 }}

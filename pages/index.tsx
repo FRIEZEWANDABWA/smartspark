@@ -204,27 +204,27 @@ export default function Home() {
   const services = [
     {
       icon: Monitor,
-      title: 'Web & App Design',
+      title: 'Web Development & Design',
       description: 'Professional website and mobile app design solutions for your business.',
       link: '/services/web-development-and-design'
     },
     {
       icon: Brain,
-      title: 'AI Automation',
+      title: 'AI & Automation Solutions',
       description: 'Cutting-edge AI solutions and automation to streamline your processes.',
       link: '/services/ai-and-automation-solutions'
     },
     {
-      icon: Database,
-      title: 'Data Services',
-      description: 'Data entry, analysis, and management services for your business needs.',
-      link: '/services/data-services'
+      icon: Pen,
+      title: 'Graphic Design & Branding',
+      description: 'Creative design and branding solutions for your brand identity.',
+      link: '/services/graphic-design-and-branding'
     },
     {
-      icon: Video,
-      title: 'Graphic Design & Video Editing',
-      description: 'Creative design and professional video editing for your brand.',
-      link: '/services/video-production-and-editing'
+      icon: Globe,
+      title: 'Digital Marketing',
+      description: 'Strategic digital marketing to grow your online presence.',
+      link: '/services/digital-marketing'
     }
   ]
 
