@@ -126,10 +126,10 @@ export default function Services() {
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
               Comprehensive digital solutions powered by African talent and cutting-edge technology
             </p>
-            <button className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
+            <Link href="/contact" className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
               Get Free Consultation
               <ArrowRight className="ml-2" size={20} />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>

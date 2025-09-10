@@ -737,7 +737,7 @@ export default function Contact() {
                 Send us a detailed email with your project requirements
               </p>
               <a 
-                href="mailto:info@smartspark.com"
+                href="mailto:contact@smartsparkservices.com"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block"
               >
                 Send Email

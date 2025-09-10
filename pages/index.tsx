@@ -481,7 +481,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Mail className="mr-4 text-accent-500" size={24} />
-                  <span className="text-secondary-800 dark:text-secondary-200">info@smartspark.com</span>
+                  <span className="text-secondary-800 dark:text-secondary-200">contact@smartsparkservices.com</span>
                 </div>
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Phone className="mr-4 text-accent-500" size={24} />

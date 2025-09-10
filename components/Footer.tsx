@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-secondary-200">
                 <Mail className="mr-3 text-accent-500" size={16} />
-                <span className="text-sm">info@smartspark.com</span>
+                <span className="text-sm">contact@smartsparkservices.com</span>
               </div>
               <div className="flex items-center text-secondary-200">
                 <Phone className="mr-3 text-accent-500" size={16} />
