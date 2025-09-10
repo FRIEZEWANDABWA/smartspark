@@ -719,9 +719,9 @@ export default function Contact() {
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Schedule a 30-minute call to discuss your project in detail
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+              <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
                 Book Call
-              </button>
+              </Link>
             </motion.div>
 
             <motion.div

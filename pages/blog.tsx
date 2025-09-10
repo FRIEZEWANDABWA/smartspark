@@ -188,8 +188,8 @@ export default function Blog() {
                     </div>
                     <span className="font-medium text-gray-900 dark:text-white">{blogPosts[0].author}</span>
                   </div>
-                  <Link href={`/blog/${blogPosts[0].slug}`} className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors inline-flex items-center">
-                    Read More
+                  <Link href="/contact" className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors inline-flex items-center">
+                    Get Quote
                     <ArrowRight className="ml-2" size={16} />
                   </Link>
                 </div>
@@ -279,8 +279,8 @@ export default function Blog() {
                               </div>
                               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{post.author}</span>
                             </div>
-                            <Link href={`/blog/${post.slug}`} className="text-primary-600 font-semibold hover:text-primary-700 transition-colors inline-flex items-center text-sm">
-                              Read More
+                            <Link href="/contact" className="text-primary-600 font-semibold hover:text-primary-700 transition-colors inline-flex items-center text-sm">
+                              Get Quote
                               <ArrowRight className="ml-1" size={14} />
                             </Link>
                           </div>
@@ -314,9 +314,9 @@ export default function Blog() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
               />
-              <button className="bg-white text-primary-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <Link href="/contact" className="bg-white text-primary-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
                 Subscribe
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
