@@ -45,15 +45,10 @@ export default function Contact() {
     // Set service type from URL parameter
     if (router.query.service) {
       const serviceMap: Record<string, string> = {
-        'web-development-and-design': 'Web Development & Design',
-        'ai-and-automation-solutions': 'AI & Automation Solutions',
-        'data-services': 'Data Services',
-        'content-writing-and-copywriting': 'Content Writing & Copywriting',
-        'graphic-design-and-branding': 'Graphic Design & Branding',
-        'video-production-and-editing': 'Video Production & Editing',
-        'virtual-assistance': 'Virtual Assistance',
-        'digital-marketing': 'Digital Marketing',
-        'project-management': 'Project Management'
+        "web-development-and-design": "Web Development & Design",
+        "ai-automation-solutions": "AI & Automation Solutions", 
+        "graphic-design-and-branding": "Graphic Design & Branding",
+        "digital-marketing": "Digital Marketing",
       }
       const serviceName = serviceMap[router.query.service as string]
       if (serviceName) {
@@ -165,17 +160,12 @@ export default function Contact() {
     }
   }
 
+
   const services = [
-    "Virtual Assistance",
-    "Content Writing & Copywriting",
-    "Graphic Design & Branding",
-    "Video Production & Editing",
     "Web Development & Design",
     "AI & Automation Solutions",
-    "Data Services",
-    "Digital Marketing",
-    "Project Management",
-    "Other"
+    "Graphic Design & Branding",
+    "Digital Marketing"
   ]
 
   const budgetRanges = [

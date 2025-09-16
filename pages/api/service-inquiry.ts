@@ -1,25 +1,34 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { sendNotification } from '../../lib/emailNotifications'
+import { NextApiRequest, NextApiResponse } from 'next';
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  host: 'localhost',
+  port: 5432,
+  database: 'smartspark',
+  user: 'postgres',
+  password: 'secure_password',
+});
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' })
+    return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, email, service, details } = req.body
-
   try {
-    // Send email notification
-    await sendNotification({
-      type: 'Service Inquiry',
-      name,
-      email,
-      service,
-      message: details
-    })
-    
-    res.status(201).json({ message: 'Service inquiry submitted successfully' })
+    const { name, email, service, details } = req.body;
+
+    if (!name || !email) {
+      return res.status(400).json({ message: 'Name and email are required' });
+    }
+
+    await pool.query(
+      'INSERT INTO service_inquiries (name, email, service, details) VALUES ($1, $2, $3, $4)',
+      [name, email, service || 'Not specified', details || 'No details']
+    );
+
+    res.status(200).json({ message: 'Service inquiry submitted successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Failed to submit service inquiry' })
+    console.error('Service inquiry error:', error);
+    res.status(500).json({ message: 'Failed to submit service inquiry' });
   }
 }
