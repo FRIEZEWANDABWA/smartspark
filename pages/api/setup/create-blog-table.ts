@@ -78,7 +78,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(500).json({ 
       success: false, 
       message: 'Failed to create blog table',
-      error: error.message 
+      error: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }
