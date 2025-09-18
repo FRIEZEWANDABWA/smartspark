@@ -1,5 +1,4 @@
 import { sendAllNotifications } from '../../lib/notifications';
-import { triggerN8NAutoReply } from '../../lib/n8n-webhook';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Pool } from 'pg';
 import { sanitizeInput, isValidEmail } from '../../lib/security';
@@ -28,11 +27,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (submissions.has(clientIP)) {
       const userSubmissions = submissions.get(clientIP);
       const recentSubmissions = userSubmissions.filter((time: number) => now - time < windowMs);
-
+      
       if (recentSubmissions.length >= maxRequests) {
         return res.status(429).json({ message: 'Too many submissions. Please try again later.' });
       }
-
+      
       submissions.set(clientIP, [...recentSubmissions, now]);
     } else {
       submissions.set(clientIP, [now]);
@@ -57,14 +56,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [cleanName, cleanEmail, cleanMessage]
     );
 
-    await sendAllNotifications({ name: cleanName, email: cleanEmail, message: cleanMessage, service: 'Contact Form' }, 'contact');
+  await sendAllNotifications({ name: cleanName, email: cleanEmail, message: cleanMessage, service: 'Contact Form' }, 'contact');
 
-    await triggerN8NAutoReply({
-      name: cleanName,
-      email: cleanEmail,
-      message: cleanMessage,
-      service: 'Contact Form'
-    });
 
     res.status(200).json({ message: 'Contact submitted successfully' });
   } catch (error) {
@@ -72,3 +65,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(500).json({ message: 'Failed to submit contact' });
   }
 }
+ 
+

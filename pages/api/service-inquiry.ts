@@ -1,3 +1,4 @@
+import { triggerN8NAutoReply } from '../../lib/n8n-webhook';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Pool } from 'pg';
 
@@ -25,6 +26,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       'INSERT INTO service_inquiries (name, email, service, details) VALUES ($1, $2, $3, $4)',
       [name, email, service || 'Not specified', details || 'No details']
     );
+
+    await triggerN8NAutoReply({
+      name,
+      email,
+      message: `Service Inquiry: ${service || 'Not specified'}, Details: ${details || 'No details'}`,
+      service: service || 'Service Inquiry'
+    });
 
     res.status(200).json({ message: 'Service inquiry submitted successfully' });
   } catch (error) {
