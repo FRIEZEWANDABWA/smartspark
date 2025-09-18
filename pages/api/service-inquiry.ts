@@ -16,20 +16,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { name, email, service, details } = req.body;
+    const { name, email, phone, service, details } = req.body;
 
     if (!name || !email) {
       return res.status(400).json({ message: 'Name and email are required' });
     }
 
     await pool.query(
-      'INSERT INTO service_inquiries (name, email, service, details) VALUES ($1, $2, $3, $4)',
-      [name, email, service || 'Not specified', details || 'No details']
+      'INSERT INTO service_inquiries (name, email, phone, service, details) VALUES ($1, $2, $3, $4, $5)',
+      [name, email, phone || '', service || 'Not specified', details || 'No details']
     );
 
     await triggerN8NAutoReply({
       name,
       email,
+      phone: phone || '',
       message: `Service Inquiry: ${service || 'Not specified'}, Details: ${details || 'No details'}`,
       service: service || 'Service Inquiry'
     });

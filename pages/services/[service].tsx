@@ -14,7 +14,7 @@ export default function ServiceDetail() {
       title: 'Content Writing & Copywriting',
       subtitle: 'Engaging content that converts and captivates your audience',
       description: 'Transform your brand voice with compelling content that drives engagement, builds trust, and converts visitors into customers. Our expert writers craft SEO-optimized content tailored to your unique brand personality.',
-      image: '/images/services/writing.jpg',
+      image: '/images/services/pen-4337521_1280.jpg',
       features: [
         'SEO-optimized blog posts and articles',
         'Compelling website copy and landing pages',
@@ -42,7 +42,7 @@ export default function ServiceDetail() {
       title: 'Graphic Design & Branding',
       subtitle: 'Visual identity that makes your brand unforgettable',
       description: 'Create a powerful visual identity that resonates with your target audience and sets you apart from competitors. From logos to complete brand systems, we design with purpose and impact.',
-      image: '/images/services/design.jpg',
+      image: '/images/services/pexels-cottonbro-6153343 (1).jpg',
       features: [
         'Logo design and brand identity',
         'Business cards and stationery',
@@ -70,7 +70,7 @@ export default function ServiceDetail() {
       title: 'Video Production & Editing',
       subtitle: 'Professional videos that tell your story and drive results',
       description: 'Bring your brand to life with high-quality video content that engages, educates, and converts. From concept to final cut, we handle every aspect of video production.',
-      image: '/images/services/video.jpg',
+      image: '/images/services/pexels-pavel-danilyuk-8438918.jpg',
       features: [
         'Promotional and marketing videos',
         'Product demonstrations and tutorials',
@@ -98,14 +98,14 @@ export default function ServiceDetail() {
       title: 'Web Development & Design',
       subtitle: 'Custom websites that perform and convert',
       description: 'Build a powerful online presence with custom websites that not only look amazing but also drive results. Our development team creates fast, secure, and user-friendly websites.',
-      image: '/images/services/christopher-gower-m_HRfLhgABo-unsplash.jpg',
+      image: '/images/services/pexels-cottonbro-6153354 (1).jpg',
       features: [
-        'Responsive website design and development',
+        'Personal websites',
+        'Company websites',
         'E-commerce platform integration',
         'Content management systems (CMS)',
         'Search engine optimization (SEO)',
-        'Performance optimization',
-        'Ongoing maintenance and support'
+        'Performance optimization'
       ],
       benefits: [
         'Increase online visibility and traffic',
@@ -126,14 +126,14 @@ export default function ServiceDetail() {
       title: 'AI & Automation Solutions',
       subtitle: 'Intelligent automation that scales your business',
       description: 'Leverage the power of artificial intelligence to automate repetitive tasks, improve efficiency, and scale your operations. Our AI solutions are tailored to your specific business needs.',
-      image: '/images/services/ai.jpg',
+      image: '/images/services/pexels-googledeepmind-17485013.jpg',
       features: [
         'ChatGPT and AI chatbot integration',
+        'Email automation',
+        'Social media post automation',
+        'Chatbot creation',
         'Workflow automation and optimization',
-        'Data analysis and reporting automation',
-        'Customer service automation',
-        'Content generation and optimization',
-        'Custom AI solution development'
+        'Data analysis and reporting automation'
       ],
       benefits: [
         'Reduce operational costs by up to 60%',
@@ -182,7 +182,7 @@ export default function ServiceDetail() {
       title: 'Virtual Assistance',
       subtitle: 'Professional support that keeps your business running smoothly',
       description: 'Focus on growing your business while we handle the administrative tasks. Our virtual assistants provide reliable, professional support tailored to your specific needs.',
-      image: '/images/services/virtual.jpg',
+      image: '/images/services/pexels-moose-photos-170195-1036642.jpg',
       features: [
         'Email management and organization',
         'Calendar scheduling and coordination',
@@ -210,7 +210,7 @@ export default function ServiceDetail() {
       title: 'Digital Marketing',
       subtitle: 'Strategic marketing that drives growth and ROI',
       description: 'Accelerate your business growth with data-driven digital marketing strategies. We help you reach your target audience, generate quality leads, and maximize your marketing ROI.',
-      image: '/images/services/pexels-tara-winstead-8849295.jpg',
+      image: '/images/services/pexels-tara-winstead-8849283.jpg',
       features: [
         'Social media marketing and management',
         'Search engine optimization (SEO)',

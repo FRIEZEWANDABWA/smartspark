@@ -130,7 +130,9 @@ export default function Contact() {
         body: JSON.stringify({
           name: formData.fullName,
           email: formData.email,
-          message: `Service: ${formData.serviceType || 'General Inquiry'}\nBudget: ${formData.budgetRange || 'Not specified'}\n\n${detailedMessage}`
+          phone: `${formData.countryCode}${formData.phone}`,
+          service: formData.serviceType || 'General Inquiry',
+          message: `Budget: ${formData.budgetRange || 'Not specified'}\n\n${detailedMessage}`
         })
       })
 
@@ -691,7 +693,7 @@ export default function Contact() {
                 Get instant responses and quick answers to your questions
               </p>
               <button 
-                onClick={() => window.open('https://wa.me/14147918762', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://wa.me/16028863530', '_blank', 'noopener,noreferrer')}
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 Start Chat

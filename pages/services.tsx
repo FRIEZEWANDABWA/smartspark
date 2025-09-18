@@ -14,12 +14,12 @@ export default function Services() {
         {
           name: "Web Development & Design",
           description: "Custom websites, e-commerce platforms, and web applications",
-          features: ["Responsive design", "E-commerce integration", "CMS development", "Performance optimization"],
+          features: ["Personal websites", "Company websites", "E-commerce integration", "CMS development", "Performance optimization"],
         },
         {
           name: "AI & Automation Solutions",
           description: "ChatGPT integration, workflow automation, and AI-powered tools",
-          features: ["ChatGPT integration", "Process automation", "Data analysis", "Custom AI solutions"],
+          features: ["ChatGPT integration", "Email automation", "Social media post automation", "Chatbot creation", "Process automation", "Data analysis"],
         },
         {
           name: "Graphic Design & Branding",
@@ -78,10 +78,7 @@ export default function Services() {
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
               Comprehensive digital solutions powered by African talent and cutting-edge technology
             </p>
-            <Link href="/contact" className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
-              Get Free Consultation
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
+
           </motion.div>
         </div>
       </section>
@@ -228,7 +225,7 @@ export default function Services() {
               <a href="/contact" className="bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Start Your Project
               </a>
-              <a href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors">
+              <a href="mailto:contact@smartsparkservices.com?subject=I wanna book an appointment" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-700 transition-colors">
                 Schedule Consultation
               </a>
             </div>

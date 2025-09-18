@@ -83,9 +83,9 @@ function PortfolioCarousel({ items }: { items: PortfolioItem[] }) {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow group hover:-translate-y-1 duration-300">
                 <div className="h-48 bg-gray-200 relative overflow-hidden">
                   <div className="absolute inset-0 bg-cover bg-center" style={{ 
-                    backgroundImage: `url(/images/portfolio/${item.title.toLowerCase().replace(/\s+/g, '-')}.jpg)`
+                    backgroundImage: `url(/images/portfolio/${item.image})`
                   }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/70 to-primary-800/70 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 to-primary-800/60 flex items-center justify-center">
                     <span className="text-accent-200 text-5xl">
                       {item.type === 'Writing' && '✍️'}
                       {item.type === 'Design' && '🎨'}
@@ -184,7 +184,7 @@ export default function Home() {
       if (response.ok) {
         // Also create WhatsApp message
         const message = `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
-        const whatsappUrl = `https://wa.me/14147918762?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/16028863530?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         
         setSubmitStatus('success');
@@ -233,42 +233,42 @@ export default function Home() {
       type: 'Writing', 
       title: 'Tech Blog Series', 
       description: 'Comprehensive AI and automation blog series for SaaS company',
-      image: '/images/portfolio/blog-series.jpg',
+      image: 'pen-4337521_1280.jpg',
       feedback: 'The blog series increased our organic traffic by 45% in just two months!'
     },
     { 
       type: 'Design', 
       title: 'Brand Identity', 
       description: 'Complete rebrand for African fintech startup',
-      image: '/images/portfolio/brand-identity.jpg',
+      image: 'pexels-cottonbro-6153343 (1).jpg',
       feedback: 'Our new brand identity perfectly captures our vision and values.'
     },
     { 
       type: 'Video', 
       title: 'Product Demo', 
       description: 'Engaging product demonstration video for mobile app',
-      image: '/images/portfolio/product-demo.jpg',
+      image: 'pexels-pavel-danilyuk-8438918.jpg',
       feedback: 'The demo video helped us increase conversion rates by 32%.'
     },
     { 
       type: 'AI', 
       title: 'Chatbot Integration', 
       description: 'Custom ChatGPT integration for customer support',
-      image: '/images/portfolio/chatbot.jpg',
+      image: 'pexels-googledeepmind-17485013.jpg',
       feedback: 'Our support team is now 3x more efficient thanks to the AI integration.'
     },
     { 
       type: 'Web Development', 
       title: 'E-commerce Platform', 
       description: 'Custom e-commerce solution for a boutique fashion brand',
-      image: '/images/portfolio/ecommerce.jpg',
+      image: 'pexels-cottonbro-6153354 (1).jpg',
       feedback: 'Sales increased by 78% within the first quarter after launch!'
     },
     { 
       type: 'Marketing', 
       title: 'Digital Campaign', 
       description: 'Integrated digital marketing campaign for product launch',
-      image: '/images/portfolio/marketing.jpg',
+      image: 'pexels-tara-winstead-8849283.jpg',
       feedback: 'The campaign exceeded our expectations with 2.5x ROI.'
     }
   ]
@@ -314,7 +314,7 @@ export default function Home() {
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-primary-900/70"></div>
+        <div className="absolute inset-0 bg-primary-900/50"></div>
         
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-gray-900 dark:text-white w-full z-10">
@@ -342,7 +342,8 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-secondary-100 dark:bg-secondary-800 relative">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/images/backgrounds/about-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-20 dark:opacity-40" style={{ backgroundImage: 'url(/images/backgrounds/about-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 bg-white/60 dark:bg-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 mb-6">About SmartSpark Services</h2>
@@ -415,8 +416,8 @@ export default function Home() {
 
 
       {/* Services Section with Slider */}
-      <section id="services" className="py-20 bg-primary-700 dark:bg-primary-700 light:bg-white text-text-dark dark:text-text-dark light:text-text-light relative">
-        <div className="absolute inset-0 opacity-3 bg-cover bg-center" style={{ backgroundImage: 'url(/images/backgrounds/violet-8474790_1920.jpg)' }}></div>
+      <section id="services" className="py-20 bg-white dark:bg-primary-700 text-gray-900 dark:text-white relative">
+        <div className="absolute inset-0 opacity-5 dark:opacity-10 bg-cover bg-center" style={{ backgroundImage: 'url(/images/backgrounds/violet-8474790_1920.jpg)' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-accent-500 mb-6">Our Services</h2>
@@ -428,12 +429,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Link href={service.link} key={service.title}>
-                <div className="bg-primary-600 dark:bg-primary-600 light:bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 cursor-pointer">
-                  <service.icon className="text-accent-500 mb-4" size={40} />
-                  <h3 className="text-lg font-bold mb-3 text-white dark:text-white light:text-text-light">{service.title}</h3>
-                  <p className="text-white/90 dark:text-white/90 light:text-text-light/80 text-sm">{service.description}</p>
+                <div className="bg-white dark:bg-primary-600 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 cursor-pointer border border-gray-200 dark:border-primary-500">
+                  <service.icon className="text-accent-600 dark:text-accent-500 mb-4" size={40} />
+                  <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{service.title}</h3>
+                  <p className="text-gray-700 dark:text-white/90 text-sm">{service.description}</p>
                   <div className="mt-4">
-                    <div className="inline-block bg-accent-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-600 transition-colors">
+                    <div className="inline-block bg-accent-600 dark:bg-accent-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-700 dark:hover:bg-accent-600 transition-colors">
                       Learn More
                     </div>
                   </div>
@@ -445,15 +446,15 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section with Carousel */}
-      <section id="portfolio" className="py-20 bg-primary-800 dark:bg-primary-800 light:bg-secondary-100 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15 dark:opacity-10">
+      <section id="portfolio" className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15 dark:opacity-25">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/pexels-energepic-com-27411-313690.jpg)' }}></div>
         </div>
-        <div className="absolute inset-0 bg-primary-800/80 dark:bg-primary-800/85"></div>
+        <div className="absolute inset-0 bg-white/85 dark:bg-primary-800/75"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 mb-6">Our Portfolio</h2>
-            <p className="text-xl text-secondary-700 dark:text-secondary-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Our Portfolio</h2>
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Showcasing our best work across writing, design, video, and AI services.
             </p>
           </div>
@@ -465,11 +466,12 @@ export default function Home() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-primary-800 dark:bg-primary-800 light:bg-secondary-100 text-text-dark dark:text-text-dark light:text-text-light relative">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url(/images/backgrounds/network-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <section id="contact" className="py-20 bg-gray-100 dark:bg-primary-800 text-gray-900 dark:text-white relative">
+        <div className="absolute inset-0 opacity-15 dark:opacity-40" style={{ backgroundImage: 'url(/images/backgrounds/network-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 bg-white/70 dark:bg-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-600 dark:text-primary-400">Let's Work Together</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Let's Work Together</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Ready to transform your business with AI-powered creativity? Get in touch for a free consultation.
             </p>
@@ -477,7 +479,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Mail className="mr-4 text-accent-500" size={24} />
@@ -485,7 +487,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Phone className="mr-4 text-accent-500" size={24} />
-                  <span className="text-secondary-800 dark:text-secondary-200">+1(414)791-8762</span>
+                  <span className="text-secondary-800 dark:text-secondary-200">+1(602)886-3530</span>
                 </div>
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <MapPin className="mr-4 text-accent-500" size={24} />
@@ -501,8 +503,8 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-primary-600 dark:bg-primary-900 p-8 rounded-xl shadow-lg text-secondary-50">
-              <h3 className="text-2xl font-bold mb-6 text-accent-500">Quick Contact</h3>
+            <div className="bg-white dark:bg-primary-900 p-8 rounded-xl shadow-lg text-gray-900 dark:text-white border border-gray-200 dark:border-primary-700">
+              <h3 className="text-2xl font-bold mb-6 text-accent-600 dark:text-accent-500">Quick Contact</h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -510,7 +512,7 @@ export default function Home() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Your Name"
-                  className="w-full p-3 rounded-lg bg-primary-700 dark:bg-primary-800 border border-primary-500 dark:border-primary-700 placeholder-secondary-300 text-secondary-50 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none"
+                  className="w-full p-3 rounded-lg bg-gray-50 dark:bg-primary-800 border border-gray-300 dark:border-primary-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:border-accent-600 dark:focus:border-accent-500 focus:ring-1 focus:ring-accent-600 dark:focus:ring-accent-500 outline-none"
                 />
                 <input
                   type="email"
@@ -518,7 +520,7 @@ export default function Home() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Your Email"
-                  className="w-full p-3 rounded-lg bg-primary-700 dark:bg-primary-800 border border-primary-500 dark:border-primary-700 placeholder-secondary-300 text-secondary-50 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none"
+                  className="w-full p-3 rounded-lg bg-gray-50 dark:bg-primary-800 border border-gray-300 dark:border-primary-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:border-accent-600 dark:focus:border-accent-500 focus:ring-1 focus:ring-accent-600 dark:focus:ring-accent-500 outline-none"
                 />
                 <textarea
                   name="message"
@@ -526,12 +528,12 @@ export default function Home() {
                   onChange={handleInputChange}
                   placeholder="Tell us about your project"
                   rows={4}
-                  className="w-full p-3 rounded-lg bg-primary-700 dark:bg-primary-800 border border-primary-500 dark:border-primary-700 placeholder-secondary-300 text-secondary-50 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none resize-none"
+                  className="w-full p-3 rounded-lg bg-gray-50 dark:bg-primary-800 border border-gray-300 dark:border-primary-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:border-accent-600 dark:focus:border-accent-500 focus:ring-1 focus:ring-accent-600 dark:focus:ring-accent-500 outline-none resize-none"
                 ></textarea>
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-accent-500 text-secondary-50 py-3 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-accent-600 dark:bg-accent-500 text-white py-3 rounded-lg font-semibold hover:bg-accent-700 dark:hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

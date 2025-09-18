@@ -22,7 +22,7 @@ export default function BlogAdmin() {
   };
 
   const fetchPosts = async () => {
-    const response = await fetch('/api/blog');
+    const response = await fetch('/api/blog-simple');
     const data = await response.json();
     setPosts(data);
   };
@@ -30,7 +30,7 @@ export default function BlogAdmin() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const method = editingPost ? 'PUT' : 'POST';
-    const url = editingPost ? `/api/blog/${editingPost.id}` : '/api/blog';
+    const url = editingPost ? `/api/blog-simple?id=${editingPost.id}` : '/api/blog-simple';
     
     await fetch(url, {
       method,
@@ -58,7 +58,7 @@ export default function BlogAdmin() {
 
   const handleDelete = async (id: number) => {
     if (confirm('Delete this post?')) {
-      await fetch(`/api/blog/${id}`, { method: 'DELETE' });
+      await fetch(`/api/blog-simple?id=${id}`, { method: 'DELETE' });
       fetchPosts();
     }
   };

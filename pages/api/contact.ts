@@ -1,16 +1,8 @@
 import { sendAllNotifications } from '../../lib/notifications';
 import { triggerN8NAutoReply } from '../../lib/n8n-webhook';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Pool } from 'pg';
+import { db } from '../../lib/db-fallback';
 import { sanitizeInput, isValidEmail } from '../../lib/security';
-
-const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT || '5432'),
-  database: process.env.DB_NAME || 'smartspark',
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'secure_password',
-});
 
 const submissions = new Map();
 
@@ -38,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       submissions.set(clientIP, [now]);
     }
 
-    const { name, email, message } = req.body;
+    const { name, email, phone, message, service } = req.body;
 
     if (!name || !email || !message) {
       return res.status(400).json({ message: 'All fields are required' });
@@ -50,21 +42,44 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const cleanName = sanitizeInput(name);
     const cleanEmail = sanitizeInput(email);
+    const cleanPhone = phone ? sanitizeInput(phone) : '';
     const cleanMessage = sanitizeInput(message);
+    const cleanService = service ? sanitizeInput(service) : 'General Inquiry';
 
-    await pool.query(
-      'INSERT INTO contact_submissions (name, email, message) VALUES ($1, $2, $3)',
-      [cleanName, cleanEmail, cleanMessage]
-    );
-
-    await sendAllNotifications({ name: cleanName, email: cleanEmail, message: cleanMessage, service: 'Contact Form' }, 'contact');
-
-    await triggerN8NAutoReply({
+    // Save to database (PostgreSQL or file fallback)
+    await db.saveContact({
       name: cleanName,
       email: cleanEmail,
+      phone: cleanPhone,
       message: cleanMessage,
-      service: 'Contact Form'
+      service: cleanService
     });
+
+    // Send notifications
+    try {
+      await sendAllNotifications({ 
+        name: cleanName, 
+        email: cleanEmail, 
+        phone: cleanPhone,
+        message: cleanMessage, 
+        service: cleanService 
+      }, 'contact');
+    } catch (error) {
+      console.error('Email notification failed:', error);
+    }
+
+    // Trigger n8n webhook
+    try {
+      await triggerN8NAutoReply({
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        message: cleanMessage,
+        service: cleanService
+      });
+    } catch (error) {
+      console.error('N8N webhook failed:', error);
+    }
 
     res.status(200).json({ message: 'Contact submitted successfully' });
   } catch (error) {
