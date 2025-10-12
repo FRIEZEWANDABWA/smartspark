@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Frieze Wandabwa",
+    "email": "friezekw@gmail.com",
+    "phone": "+254718300236",
+    "message": "Budget: $500 - $1,000\n\nPhone: +254718300236\nProject: ggggg\nTimeline: Within 1 week\nUrgency: Low - No rush\nCompany: gggg\nLocation: ggg\nExperience: no\nNotes: ggggg\nTimestamp: 2025-09-18T17:43:50.518Z",
+    "service": "Graphic Design & Branding",
+    "id": 1758217430797,
+    "created_at": "2025-09-18T17:43:50.797Z"
+  },
+  {
+    "name": "Frieze Wandabwa",
+    "email": "friezekw@gmail.com",
+    "phone": "+254718300236",
+    "message": "Budget: $500 - $1,000\n\nPhone: +254718300236\nProject: gggg\nTimeline: Within 2 weeks\nUrgency: Medium - Standard timeline\nCompany: Communication Authority of Kenya\nLocation: ggg\nExperience: yes\nNotes: gggg\nTimestamp: 2025-09-18T17:44:34.578Z",
+    "service": "Graphic Design & Branding",
+    "id": 1758217474939,
+    "created_at": "2025-09-18T17:44:34.939Z"
+  },
+  {
+    "name": "Frieze Wandabwa",
+    "email": "friezekw@gmail.com",
+    "phone": "+254718300236",
+    "message": "Budget: $500 - $1,000\n\nPhone: +254718300236\nProject: TEST\nTimeline: Within 1 week\nUrgency: Low - No rush\nCompany: master\nLocation: nairobi\nExperience: yes\nNotes: TEST\nTimestamp: 2025-10-07T06:01:23.056Z",
+    "service": "Web Development & Design",
+    "id": 1759816883787,
+    "created_at": "2025-10-07T06:01:23.787Z"
+  }
+]
