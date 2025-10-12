@@ -1,28 +1,55 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { prisma } from '../../../lib/prisma'
-import { verifyPassword, generateToken } from '../../../lib/auth'
+import jwt from 'jsonwebtoken'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret'
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'defaultpass'
+
+// Rate limiting storage
+const loginAttempts = new Map<string, { count: number; lastAttempt: number }>()
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' })
   }
 
-  const { email, password } = req.body
+  const { username, password } = req.body
+  const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown'
 
-  try {
-    const user = await prisma.user.findUnique({ where: { email } })
-    
-    if (!user || !(await verifyPassword(password, user.password))) {
-      return res.status(401).json({ message: 'Invalid credentials' })
-    }
-
-    const token = generateToken(user.id)
-    
-    res.status(200).json({
-      token,
-      user: { id: user.id, email: user.email, name: user.name, role: user.role }
-    })
-  } catch (error) {
-    res.status(500).json({ message: 'Server error' })
+  // Check rate limiting
+  const attempts = loginAttempts.get(clientIP as string) || { count: 0, lastAttempt: 0 }
+  const now = Date.now()
+  
+  // Reset attempts after 15 minutes
+  if (now - attempts.lastAttempt > 15 * 60 * 1000) {
+    attempts.count = 0
   }
+
+  if (attempts.count >= 3) {
+    return res.status(429).json({ message: 'Too many attempts. Try again in 15 minutes.' })
+  }
+
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Username and password required' })
+  }
+
+  // Check exact credentials
+  if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+    attempts.count++
+    attempts.lastAttempt = now
+    loginAttempts.set(clientIP as string, attempts)
+    return res.status(401).json({ message: 'Invalid credentials' })
+  }
+
+  // Reset attempts on successful login
+  loginAttempts.delete(clientIP as string)
+
+  // Generate secure JWT token
+  const token = jwt.sign(
+    { username: ADMIN_USERNAME, role: 'admin', loginTime: now },
+    JWT_SECRET,
+    { expiresIn: '2h' }
+  )
+
+  res.status(200).json({ token, message: 'Login successful' })
 }

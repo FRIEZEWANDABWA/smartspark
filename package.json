@@ -13,7 +13,9 @@
     "db:generate": "prisma generate",
     "sync": "node sync-workflow.js",
     "sync:vps": "node scripts/sync-with-vps.js",
-    "test:api": "node scripts/test-api-endpoints.js"
+    "test:api": "node scripts/test-api-endpoints.js",
+    "optimize": "next build && next-bundle-analyzer",
+    "security-check": "npm audit --audit-level moderate"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",

@@ -177,14 +177,16 @@ export default function Services() {
       </section>
 
       {/* Pricing Note Section */}
-      <section className="py-16 bg-gray-50 dark:bg-primary-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-gray-50 dark:bg-primary-800 relative">
+        <div className="absolute inset-0 opacity-30 dark:opacity-20" style={{ backgroundImage: 'url(/images/backgrounds/automation-bg.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 bg-gray-50/80 dark:bg-primary-800/85"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-primary-700 p-8 rounded-xl shadow-lg"
+            className="bg-white/95 dark:bg-primary-700/95 p-8 rounded-xl shadow-lg backdrop-blur-sm"
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Flexible Pricing for Every Project</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
@@ -209,8 +211,10 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-700 to-secondary-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-r from-primary-700 to-secondary-600 text-white relative">
+        <div className="absolute inset-0 opacity-25 dark:opacity-15" style={{ backgroundImage: 'url(/images/backgrounds/chatbox-bg.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/90 to-secondary-600/90"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

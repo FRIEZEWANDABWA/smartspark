@@ -1,9 +1,70 @@
+# Dependencies
 node_modules/
-.next/
-.env.local
-.env
-*.log
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
 .DS_Store
-dist/
-build/
-test-email.js
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database
+prisma/dev.db
+prisma/dev.db-journal
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Security files
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Custom
+temp-vps-sync/
+SECURITY_CLEANUP.bat
+vps-security-cleanup.sh
+middleware.secure.ts
+next.config.optimized.js
+middleware.optimized.ts

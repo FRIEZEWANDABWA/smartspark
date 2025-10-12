@@ -10,12 +10,12 @@ export default function Header() {
   return (
     <header className="bg-white dark:bg-primary-900 shadow-lg fixed w-full top-0 z-50 transition-colors duration-300">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           <Link href="/" className="flex items-center">
-            <img src="/images/logo.jpeg" alt="SmartSpark Services" className="w-12 h-12 rounded-full object-cover shadow-md" />
-            <div className="ml-2">
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">SmartSpark Services</h1>
-              <p className="text-xs text-gray-600 dark:text-gray-300 transition-colors">Where AI and Creativity Ignite</p>
+            <img src="/images/logo.webp" alt="SmartSpark Services" className="w-32 h-32 object-contain" />
+            <div className="ml-6">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">SmartSpark Services</h1>
+              <p className="text-base text-gray-600 dark:text-gray-300 transition-colors">Where AI and Creativity Ignite</p>
             </div>
           </Link>
           

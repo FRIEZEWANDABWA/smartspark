@@ -2,13 +2,19 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 dark:bg-primary-900 light:bg-secondary-200 text-text-dark dark:text-text-dark light:text-text-light py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-primary-900 dark:bg-primary-900 light:bg-secondary-200 text-text-dark dark:text-text-dark light:text-text-light py-12">
+      <div className="absolute inset-0">
+        <div className="absolute left-0 top-0 w-1/3 h-full" style={{ backgroundImage: 'url(/images/contact-bg.webp)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
+        <div className="absolute left-1/4 top-0 w-1/2 h-full" style={{ backgroundImage: 'url(/images/footer-bg.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full" style={{ backgroundImage: 'url(/images/logo.webp)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
+      </div>
+      <div className="absolute inset-0 bg-primary-900/80 dark:bg-primary-900/80"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <img src="/images/logo.jpeg" alt="SmartSpark Services" className="w-14 h-14 rounded-full object-cover mr-3 shadow-lg" />
+              <img src="/images/logo.webp" alt="SmartSpark Services" className="w-36 h-36 object-contain mr-6" />
               <div>
                 <h3 className="text-xl font-bold text-accent-500">SmartSpark Services</h3>
                 <p className="text-sm text-secondary-200">Where AI and Creativity Ignite</p>

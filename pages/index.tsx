@@ -314,7 +314,7 @@ export default function Home() {
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-primary-900/50"></div>
+        <div className="absolute inset-0 bg-primary-900/40 dark:bg-primary-900/50"></div>
         
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-gray-900 dark:text-white w-full z-10">
@@ -342,7 +342,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-secondary-100 dark:bg-secondary-800 relative">
-        <div className="absolute inset-0 opacity-20 dark:opacity-40" style={{ backgroundImage: 'url(/images/backgrounds/about-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-40 dark:opacity-40" style={{ backgroundImage: 'url(/images/backgrounds/about-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="absolute inset-0 bg-white/60 dark:bg-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -417,11 +417,11 @@ export default function Home() {
 
       {/* Services Section with Slider */}
       <section id="services" className="py-20 bg-white dark:bg-primary-700 text-gray-900 dark:text-white relative">
-        <div className="absolute inset-0 opacity-5 dark:opacity-10 bg-cover bg-center" style={{ backgroundImage: 'url(/images/backgrounds/violet-8474790_1920.jpg)' }}></div>
+        <div className="absolute inset-0 opacity-30 dark:opacity-15 bg-cover bg-center" style={{ backgroundImage: 'url(/images/backgrounds/automation-bg.webp)' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-accent-500 mb-6">Our Services</h2>
-            <p className="text-xl text-secondary-50 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-900 dark:text-secondary-50 max-w-3xl mx-auto">
               Comprehensive digital solutions tailored for entrepreneurs, startups, and businesses worldwide.
             </p>
           </div>
@@ -447,7 +447,7 @@ export default function Home() {
 
       {/* Portfolio Section with Carousel */}
       <section id="portfolio" className="py-20 bg-gray-50 dark:bg-primary-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15 dark:opacity-25">
+        <div className="absolute inset-0 opacity-40 dark:opacity-25">
           <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/backgrounds/pexels-energepic-com-27411-313690.jpg)' }}></div>
         </div>
         <div className="absolute inset-0 bg-white/85 dark:bg-primary-800/75"></div>
@@ -467,7 +467,10 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-100 dark:bg-primary-800 text-gray-900 dark:text-white relative">
-        <div className="absolute inset-0 opacity-15 dark:opacity-40" style={{ backgroundImage: 'url(/images/backgrounds/network-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0">
+          <div className="absolute left-0 top-0 w-1/2 h-full opacity-40 dark:opacity-40" style={{ backgroundImage: 'url(/images/contact-bg.webp)', backgroundSize: 'contain', backgroundPosition: 'center bottom', backgroundRepeat: 'no-repeat' }}></div>
+          <div className="absolute right-0 top-0 w-1/2 h-full opacity-40 dark:opacity-40" style={{ backgroundImage: 'url(/images/logo.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        </div>
         <div className="absolute inset-0 bg-white/70 dark:bg-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
