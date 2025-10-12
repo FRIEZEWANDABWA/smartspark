@@ -10,7 +10,10 @@
     "export": "next build && next export",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "sync": "node sync-workflow.js",
+    "sync:vps": "node scripts/sync-with-vps.js",
+    "test:api": "node scripts/test-api-endpoints.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
