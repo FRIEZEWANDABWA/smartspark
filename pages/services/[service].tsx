@@ -98,7 +98,7 @@ export default function ServiceDetail() {
       title: 'Web Development & Design',
       subtitle: 'Custom websites that perform and convert',
       description: 'Build a powerful online presence with custom websites that not only look amazing but also drive results. Our development team creates fast, secure, and user-friendly websites.',
-      image: '/images/services/pexels-cottonbro-6153354 (1).jpg',
+      image: '/images/portfolio/web-development.jpg',
       features: [
         'Personal websites',
         'Company websites',

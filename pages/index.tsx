@@ -85,16 +85,7 @@ function PortfolioCarousel({ items }: { items: PortfolioItem[] }) {
                   <div className="absolute inset-0 bg-cover bg-center" style={{ 
                     backgroundImage: `url(/images/portfolio/${item.image})`
                   }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 to-primary-800/60 flex items-center justify-center">
-                    <span className="text-accent-200 text-5xl">
-                      {item.type === 'Writing' && '✍️'}
-                      {item.type === 'Design' && '🎨'}
-                      {item.type === 'Video' && '🎬'}
-                      {item.type === 'AI' && '🤖'}
-                      {item.type === 'Web Development' && '💻'}
-                      {item.type === 'Marketing' && '📊'}
-                    </span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 to-primary-800/60"></div>
                 </div>
                 <div className="p-6">
                   <div className="text-accent-500 font-semibold text-sm mb-2">{item.type}</div>
@@ -184,7 +175,7 @@ export default function Home() {
       if (response.ok) {
         // Also create WhatsApp message
         const message = `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
-        const whatsappUrl = `https://wa.me/16028863530?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/16028511680?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         
         setSubmitStatus('success');
@@ -240,7 +231,7 @@ export default function Home() {
       type: 'Design', 
       title: 'Brand Identity', 
       description: 'Complete rebrand for African fintech startup',
-      image: 'pexels-cottonbro-6153343 (1).jpg',
+      image: 'brand-identity.jpg',
       feedback: 'Our new brand identity perfectly captures our vision and values.'
     },
     { 
@@ -261,7 +252,7 @@ export default function Home() {
       type: 'Web Development', 
       title: 'E-commerce Platform', 
       description: 'Custom e-commerce solution for a boutique fashion brand',
-      image: 'pexels-cottonbro-6153354 (1).jpg',
+      image: 'ecommerce.jpg',
       feedback: 'Sales increased by 78% within the first quarter after launch!'
     },
     { 
@@ -486,16 +477,15 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Mail className="mr-4 text-accent-500" size={24} />
-                  <span className="text-secondary-800 dark:text-secondary-200">contact@smartsparkservices.com</span>
+                  <span className="text-secondary-800 dark:text-secondary-200">info@smartsparkservices.com</span>
                 </div>
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <Phone className="mr-4 text-accent-500" size={24} />
-                  <span className="text-secondary-800 dark:text-secondary-200">+1(602)886-3530</span>
+                  <span className="text-secondary-800 dark:text-secondary-200">+1 (602) 851-1680</span>
                 </div>
                 <div className="flex items-center p-4 bg-secondary-50 dark:bg-secondary-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <MapPin className="mr-4 text-accent-500" size={24} />
                   <div className="text-secondary-800 dark:text-secondary-200">
-                    <div>18829 West Medlock Drive</div>
                     <div>Litchfield Park, AZ 85340</div>
                   </div>
                 </div>

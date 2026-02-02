@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 3010",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,7 +15,10 @@
     "sync:vps": "node scripts/sync-with-vps.js",
     "test:api": "node scripts/test-api-endpoints.js",
     "optimize": "next build && next-bundle-analyzer",
-    "security-check": "npm audit --audit-level moderate"
+    "security-check": "npm audit --audit-level moderate",
+    "optimize:images": "node scripts/optimize-images.js",
+    "analyze": "ANALYZE=true npm run build",
+    "lighthouse": "lighthouse http://localhost:3010 --output=html --output-path=./lighthouse-report.html"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -24,6 +27,7 @@
     "@types/pg": "^8.15.5",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "critters": "^0.0.25",
     "date-fns": "^2.30.0",
     "express-rate-limit": "^8.1.0",
     "express-validator": "^7.2.1",

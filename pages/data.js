@@ -1,10 +1,35 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function DataViewer() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
+    // Check authentication
+    const adminLoggedIn = localStorage.getItem('adminLoggedIn');
+    const loginTime = localStorage.getItem('adminLoginTime');
+    
+    if (!adminLoggedIn || !loginTime) {
+      router.push('/admin/login');
+      return;
+    }
+    
+    // Check if session expired (2 hours)
+    const now = Date.now();
+    const sessionAge = now - parseInt(loginTime);
+    if (sessionAge > 2 * 60 * 60 * 1000) {
+      localStorage.removeItem('adminLoggedIn');
+      localStorage.removeItem('adminLoginTime');
+      router.push('/admin/login');
+      return;
+    }
+    
+    setAuthorized(true);
+    
+    // Fetch data only if authorized
     fetch('/api/admin/submissions/')
       .then(res => res.json())
       .then(data => {
@@ -15,7 +40,11 @@ export default function DataViewer() {
         console.error('Error:', err);
         setLoading(false);
       });
-  }, []);
+  }, [router]);
+
+  if (!authorized) {
+    return <div style={{padding: '20px'}}>Redirecting to login...</div>;
+  }
 
   if (loading) return <div style={{padding: '20px'}}>Loading...</div>;
 
