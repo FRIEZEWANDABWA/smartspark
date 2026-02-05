@@ -63,25 +63,19 @@ const nextConfig = {
       }
     }
 
-    config.optimization.splitChunks = {
-      chunks: 'all',
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    }
+    // Removed custom splitChunks vendor configuration
+    // The 'vendors.js' bundle it created had 'self is not defined' errors
+    // Using Next.js default chunking strategy instead
 
     return config
   },
 
   // Enable experimental features
-  experimental: {
-    optimizeCss: true,
-    scrollRestoration: true,
-  },
+  // Disabled ALL experimental features due to webpack bundling errors ('self is not defined')
+  // experimental: {
+  //   optimizeCss: true,
+  //   scrollRestoration: true,
+  // },
 
   // Output optimization
   output: 'standalone'
