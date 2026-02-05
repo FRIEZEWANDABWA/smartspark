@@ -77,8 +77,8 @@ const nextConfig = {
   //   scrollRestoration: true,
   // },
 
-  // Output optimization
-  output: 'standalone'
+  // Output optimization removed - incompatible with 'next start'
+  // output: 'standalone'
 }
 
 module.exports = nextConfig
